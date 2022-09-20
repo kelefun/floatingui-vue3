@@ -1,0 +1,10 @@
+{
+    "name": "floatingui-vue3",
+    "version": "1.0.0",
+    "type": "module",
+    "main": "index.js",
+    "description": "like popper",
+    "dependencies": {
+      "@floating-ui/dom": "^0.2.0"
+    }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "floatingui-vue3-workspace",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "clean":"rm -r node_modules packages/**/node_modules || true",
+    "docs":"pnpm -C packages/docs run docs:dev",
+    "demo":"pnpm -C packages/demo run start"
+  },
+  "dependencies": {
+    "floatingui-vue3": "workspace:*"
+  }
+}
