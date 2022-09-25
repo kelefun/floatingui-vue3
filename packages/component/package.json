@@ -1,0 +1,10 @@
+{
+  "name": "floatingui-vue3",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "types": "index.d.ts",
+  "peerDependencies": {
+    "vue": "^3.2.37"
+  }
+}

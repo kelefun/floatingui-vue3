@@ -4,11 +4,17 @@
   "version": "1.0.0",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "clean":"rm -r node_modules packages/**/node_modules || true",
-    "docs":"pnpm -C packages/docs run docs:dev",
-    "demo":"pnpm -C packages/demo run start"
+    "clean": "rm -r node_modules packages/**/node_modules || true",
+    "docs": "pnpm -C packages/docs run docs:dev",
+    "exa": "pnpm -C packages/example run dev",
+    "com": "pnpm -C packages/components run dev"
   },
   "dependencies": {
     "floatingui-vue3": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.4",
+    "vue": "^3.2.37",
+    "vue-tsc": "^0.40.13"
   }
 }

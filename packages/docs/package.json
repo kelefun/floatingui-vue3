@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "docs:dev": "vitepress dev src",
-    "docs:build": "vitepress build src",
-    "docs:serve": "vitepress serve src"
+    "dev": "vitepress dev src",
+    "build": "vitepress build src",
+    "serve": "vitepress serve src"
   },
   "author": "",
   "license": "ISC",
