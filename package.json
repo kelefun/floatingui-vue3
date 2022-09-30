@@ -4,15 +4,20 @@
   "version": "1.0.0",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "clean": "rm -r node_modules packages/**/node_modules || true",
-    "docs": "pnpm -C packages/docs run docs:dev",
-    "exa": "pnpm -C packages/example run dev",
-    "com": "pnpm -C packages/components run dev"
+    "clean": "rm -r node_modules packages/**/node_modules play/node_modules || true",
+    "dev": "pnpm -C play run dev"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.0"
   },
   "dependencies": {
-    "floatingui-vue3": "workspace:*"
+    "@fv/components": "workspace:*",
+    "@fv/hooks": "workspace:*",
+    "@fv/utils": "workspace:*"
   },
   "devDependencies": {
+    "@types/node": "^18.7.23",
+    "sass": "^1.55.0",
     "typescript": "^4.6.4",
     "vue": "^3.2.37",
     "vue-tsc": "^0.40.13"

@@ -1,10 +1,13 @@
 {
-  "name": "floatingui-vue3",
+  "name": "@fv/components",
   "private": true,
   "version": "1.0.0",
   "type": "module",
   "types": "index.d.ts",
   "peerDependencies": {
-    "vue": "^3.2.37"
+    "vue": "^3.2.0"
+  },
+  "dependencies": {
+    "@floating-ui/dom": "^1.0.2"
   }
 }

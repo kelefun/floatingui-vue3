@@ -1,0 +1,14 @@
+{
+  "name": "@fv/hooks",
+  "version": "1.0.0",
+  "description": "folatingui-vue3 composables",
+  "license": "MIT",
+  "main": "index.ts",
+  "module": "index.ts",
+  "unpkg": "index.js",
+  "jsdelivr": "index.js",
+  "types": "index.d.ts",
+  "peerDependencies": {
+    "vue": "^3.2.0"
+  }
+}
