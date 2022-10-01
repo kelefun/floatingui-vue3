@@ -1,3 +1,4 @@
+//@ts-nocheck
 import Tooltip from './src/tooltip.vue'
 import { withInstall } from '@fv/utils'
 

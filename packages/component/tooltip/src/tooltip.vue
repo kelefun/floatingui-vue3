@@ -1,6 +1,5 @@
 <template>
   <tooltip-root v-bind="rootProps">
-    <!-- TODO -->
     <template #default="{ open }">
       <tooltip-trigger v-bind="triggerProps" nowrap>
         <slot name="trigger" />

@@ -47,7 +47,7 @@ const { start: onDelayedOpen, stop: clearTimer } = useTimeoutFn(
   }
 )
 
-const ns = useNamespace('tooltip-')
+const ns = useNamespace('tooltip')
 
 const contentId = useId()
 

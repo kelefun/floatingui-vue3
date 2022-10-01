@@ -2,12 +2,12 @@
   <div ref="contentRef" :style="contentStyle" data-tooltip--root>
     <div v-if="!nowrap" :data-side="side" :class="contentClass">
       <slot :content-style="contentStyle" :content-class="contentClass" />
-      <el-visually-hidden :id="contentId" role="tooltip">
+      <visually-hidden :id="contentId" role="tooltip">
         <template v-if="ariaLabel">
           {{ ariaLabel }}
         </template>
         <slot v-else />
-      </el-visually-hidden>
+      </visually-hidden>
       <slot name="arrow" :style="arrowStyle" :side="side" />
     </div>
   </div>
@@ -23,7 +23,7 @@ import {
   useNamespace,
   useZIndex,
 } from '@fv/hooks'
-import ElVisuallyHidden from '../../visual-hidden'
+import VisuallyHidden from '../../visual-hidden'
 import { tooltipContentProps } from './content'
 import { tooltipCommonProps } from './common'
 
@@ -58,7 +58,7 @@ const { referenceRef, contentRef, middlewareData, x, y, update } = useFloating({
 
 const zIndex = useZIndex().nextZIndex()
 
-const ns = useNamespace('tooltip-')
+const ns = useNamespace('tooltip')
 
 const side = computed(() => {
   return placement.value.split('-')[0]

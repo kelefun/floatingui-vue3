@@ -1,5 +1,5 @@
 import type { InjectionKey, Ref } from 'vue'
-import type { useNamespace } from '../../hooks'
+import type { useNamespace } from '@fv/hooks'
 
 export type TooltipContext = {
   onClose: () => void

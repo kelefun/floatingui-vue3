@@ -1,7 +1,8 @@
-import ElVisuallyHidden from './src/visual-hidden.vue'
+//@ts-nocheck
+import VisuallyHidden from './src/visual-hidden.vue'
 
-export { ElVisuallyHidden }
+export { VisuallyHidden }
 
-export default ElVisuallyHidden
+export default VisuallyHidden
 
 export * from './src/visual-hidden'
