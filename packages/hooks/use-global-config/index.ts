@@ -1,5 +1,6 @@
 import { computed, getCurrentInstance, inject, provide, ref, unref } from 'vue'
-import { ConfigProviderContext,configProviderContextKey,debugWarn, keysOf } from '../../utils'
+import { configProviderContextKey,ConfigProviderContext } from '@fv/utils'
+import { debugWarn, keysOf } from '@fv/utils'
 
 import type { MaybeRef } from '@vueuse/core'
 import type { App, Ref } from 'vue'
