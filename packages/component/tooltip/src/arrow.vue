@@ -1,5 +1,5 @@
 <template>
-  <span ref="arrowRef" :style="arrowStyle" :class="ns.e('arrow')" />
+  <div ref="arrowRef" :style="arrowStyle" :class="ns.e('arrow')" />
 </template>
 
 <script setup lang="ts">

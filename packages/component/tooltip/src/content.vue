@@ -11,7 +11,7 @@
 
 <script setup lang="ts">
 import { computed, inject, onMounted, provide, ref, unref, watch } from 'vue'
-import { offset } from '@floating-ui/dom'
+import { autoPlacement, offset } from '@floating-ui/dom'
 import { tooltipContentKey, tooltipRootKey } from '@fv/utils'
 import {
   arrowMiddleware,
@@ -40,6 +40,11 @@ const { referenceRef, contentRef, middlewareData, x, y, update } = useFloating({
   middleware: computed(() => {
     const middleware: Middleware[] = [offset(props.offset)]
 
+    if(props.autoPlacement){
+      middleware.push(
+        autoPlacement()
+      )
+    }
     if (props.showArrow) {
       middleware.push(
         arrowMiddleware({
@@ -66,6 +71,12 @@ const contentStyle = computed<CSSProperties>(() => {
     left: `${unref(x) || 0}px`,
     top: `${unref(y) || 0}px`,
     zIndex,
+    background: '#222',
+    color: 'white',
+    padding: '8px',
+    borderRadius: '4px',
+    fontSize: '80%',
+    pointerEvents: 'none'
   }
 })
 

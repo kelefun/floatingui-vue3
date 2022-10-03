@@ -7,7 +7,7 @@ import { keysOf } from '../../utils/obj'
 
 import type { Ref, ToRefs } from 'vue'
 import type {
-  ComputePositionReturn,
+  MiddlewareData,
   Middleware,
   Placement,
   SideObject,
@@ -52,7 +52,7 @@ export const useFloating = ({
   const contentRef = ref<HTMLElement>()
   const x = ref<number>()
   const y = ref<number>()
-  const middlewareData = ref<ComputePositionReturn['middlewareData']>({})
+  const middlewareData = ref<MiddlewareData>({})
 
   const states = {
     x,
@@ -66,7 +66,7 @@ export const useFloating = ({
     if (!isClient) return
 
     const referenceEl = unrefReference(referenceRef)
-    const contentEl = unrefElement(contentRef)
+    const contentEl = unrefReference(contentRef)
     if (!referenceEl || !contentEl) return
     //@ts-ignore
     const data = await computePosition(referenceEl, contentEl, {

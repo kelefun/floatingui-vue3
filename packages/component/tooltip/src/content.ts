@@ -48,7 +48,11 @@ export const tooltipContentProps = buildProps({
   },
   offset: {
     type: Number,
-    default: 8,
+    default: 10,
+  },
+  autoPlacement:{
+    type: Boolean,
+    default: true,
   },
   strategy: {
     type: definePropType<Strategy>(String),
