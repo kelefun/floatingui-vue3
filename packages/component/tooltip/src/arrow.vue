@@ -22,10 +22,11 @@ const arrowStyle = computed<CSSProperties>(() => {
   const namespace = ns.namespace.value
 
   return {
-    [`--${namespace}-tooltip--arrow-width`]: `${width}px`,
-    [`--${namespace}-tooltip--arrow-height`]: `${height}px`,
-    [`--${namespace}-tooltip--arrow-border-width`]: `${width / 2}px`,
-    [`--${namespace}-tooltip--arrow-cover-width`]: width / 2 - 1,
+    position: 'absolute',
+    background: '#222',
+    width:  `${width}px`,
+    height: `${height}px`,
+    transform: 'rotate(45deg)',
     ...(style || {}),
   }
 })

@@ -57,7 +57,7 @@ export const tooltipContentProps = buildProps({
   },
   showArrow: {
     type: Boolean,
-    default: false,
+    default: true,
   },
 } as const)
 

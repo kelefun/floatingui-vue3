@@ -7,7 +7,7 @@ type StateUpdater = (state: boolean) => void
 export const tooltipRootProps = buildProps({
   delayDuration: {
     type: Number,
-    default: 300,
+    default: 100,
   },
   defaultOpen: Boolean,
   open: {

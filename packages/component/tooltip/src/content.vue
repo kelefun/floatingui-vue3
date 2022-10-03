@@ -2,13 +2,8 @@
   <div ref="contentRef" :style="contentStyle" data-tooltip--root>
     <div v-if="!nowrap" :data-side="side" :class="contentClass">
       <slot :content-style="contentStyle" :content-class="contentClass" />
-      <visually-hidden :id="contentId" role="tooltip">
-        <template v-if="ariaLabel">
-          {{ ariaLabel }}
-        </template>
-        <slot v-else />
-      </visually-hidden>
-      <slot name="arrow" :style="arrowStyle" :side="side" />
+     
+      <slot name="arrow" :style="arrowStyle"  :side="side" />
     </div>
   </div>
 </template>
@@ -23,7 +18,7 @@ import {
   useNamespace,
   useZIndex,
 } from '@fv/hooks'
-import VisuallyHidden from '../../visual-hidden'
+// import VisuallyHidden from '../../visual-hidden'
 import { tooltipContentProps } from './content'
 import { tooltipCommonProps } from './common'
 
@@ -32,7 +27,7 @@ import type { Middleware } from '@floating-ui/dom'
 
 const props = defineProps({ ...tooltipContentProps, ...tooltipCommonProps })
 
-const { triggerRef, contentId } = inject(tooltipRootKey)!
+const { triggerRef } = inject(tooltipRootKey)!
 
 const placement = ref(props.placement)
 const strategy = ref(props.strategy)
@@ -67,8 +62,8 @@ const side = computed(() => {
 const contentStyle = computed<CSSProperties>(() => {
   return {
     position: unref(strategy),
-    top: `${unref(y) || 0}px`,
     left: `${unref(x) || 0}px`,
+    top: `${unref(y) || 0}px`,
     zIndex,
   }
 })
@@ -77,7 +72,7 @@ const arrowStyle = computed<CSSProperties>(() => {
   if (!props.showArrow) return {}
 
   const { arrow } = unref(middlewareData)
-
+console.log(arrow)
   return {
     [`--${ns.namespace.value}-tooltip--arrow-x`]: `${arrow?.x}px` || '',
     [`--${ns.namespace.value}-tooltip--arrow-y`]: `${arrow?.y}px` || '',
