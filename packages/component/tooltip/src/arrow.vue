@@ -19,7 +19,7 @@ const { arrowRef } = inject(tooltipContentKey)!
 
 const arrowStyle = computed<CSSProperties>(() => {
   const { style, width, height } = props
-  const namespace = ns.namespace.value
+  // const namespace = ns.namespace.value
 
   return {
     position: 'absolute',

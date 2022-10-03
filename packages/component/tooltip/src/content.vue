@@ -2,10 +2,11 @@
   <div ref="contentRef" :style="contentStyle" data-tooltip--root>
     <div v-if="!nowrap" :data-side="side" :class="contentClass">
       <slot :content-style="contentStyle" :content-class="contentClass" />
-     
-      <slot name="arrow" :style="arrowStyle"  :side="side" />
     </div>
+    <slot name="arrow" :style="arrowStyle" :side="side" />
+
   </div>
+
 </template>
 
 <script setup lang="ts">
@@ -27,7 +28,7 @@ import type { Middleware } from '@floating-ui/dom'
 
 const props = defineProps({ ...tooltipContentProps, ...tooltipCommonProps })
 
-const { triggerRef } = inject(tooltipRootKey)!
+const { triggerRef, contentId } = inject(tooltipRootKey)!
 
 const placement = ref(props.placement)
 const strategy = ref(props.strategy)
@@ -70,12 +71,13 @@ const contentStyle = computed<CSSProperties>(() => {
 
 const arrowStyle = computed<CSSProperties>(() => {
   if (!props.showArrow) return {}
-
   const { arrow } = unref(middlewareData)
-console.log(arrow)
+  if (!arrow) {
+    return {}
+  }
   return {
-    [`--${ns.namespace.value}-tooltip--arrow-x`]: `${arrow?.x}px` || '',
-    [`--${ns.namespace.value}-tooltip--arrow-y`]: `${arrow?.y}px` || '',
+    left: arrow.x != null ? `${arrow.x}px` : '',
+    top: arrow.y != null ? `${arrow.y}px` : ''
   }
 })
 
