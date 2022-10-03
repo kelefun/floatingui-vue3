@@ -4,7 +4,7 @@ import { useGlobalConfig } from '../use-global-config'
 const zIndex = ref(0)
 
 export const useZIndex = () => {
-  const initialZIndex = useGlobalConfig('zIndex', 2000) // TODO: move to @element-plus/constants
+  const initialZIndex = useGlobalConfig('zIndex', 2000)
   const currentZIndex = computed(() => initialZIndex.value + zIndex.value)
 
   const nextZIndex = () => {

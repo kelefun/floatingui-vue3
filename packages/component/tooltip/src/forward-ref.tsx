@@ -16,7 +16,7 @@ export const forwardRefProps = buildProps({
 
 export type ForwardRefProps = ExtractPropTypes<typeof forwardRefProps>
 
-// TODO: consider make this component a reusable component without the only child feature.
+// consider make this component a reusable component without the only child feature.
 export default defineComponent({
   props: forwardRefProps,
   setup(props, { slots }) {

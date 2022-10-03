@@ -21,15 +21,16 @@ const tooltipPlacements = [
 ] as const
 
 export const tooltipContentProps = buildProps({
-  ariaLabel: String,
-  arrowPadding: {
-    type: definePropType<number>(Number),
-    default: 5,
-  },
-  effect: {
-    type: String,
-    default: 'dark',
-  },
+  //TODO 自定义 入参功能
+  // ariaLabel: String,
+  // arrowPadding: {
+  //   type: definePropType<number>(Number),
+  //   default: 5,
+  // },
+  // effect: {
+  //   type: String,
+  //   default: 'dark',
+  // },
   contentClass: String,
   /**
    * Placement of tooltip content relative to reference element (when absent it refers to trigger)

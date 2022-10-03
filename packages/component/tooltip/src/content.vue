@@ -1,9 +1,9 @@
 <template>
   <div ref="contentRef" :style="contentStyle" data-tooltip--root>
-    <div v-if="!nowrap" :data-side="side" :class="contentClass">
+    <div v-if="!nowrap" :data-side="staticSide" :class="contentClass">
       <slot :content-style="contentStyle" :content-class="contentClass" />
     </div>
-    <slot name="arrow" :style="arrowStyle" :side="side" />
+    <slot name="arrow" :style="arrowStyle" :side="staticSide" />
 
   </div>
 
@@ -61,8 +61,13 @@ const zIndex = useZIndex().nextZIndex()
 
 const ns = useNamespace('tooltip')
 
-const side = computed(() => {
-  return placement.value.split('-')[0]
+const staticSide = computed(() => {
+  return {
+    top: 'bottom',
+    right: 'left',
+    bottom: 'top',
+    left: 'right',
+  }[placement.value.split('-')[0]];
 })
 
 const contentStyle = computed<CSSProperties>(() => {
@@ -86,20 +91,24 @@ const arrowStyle = computed<CSSProperties>(() => {
   if (!arrow) {
     return {}
   }
+
   return {
     left: arrow.x != null ? `${arrow.x}px` : '',
-    top: arrow.y != null ? `${arrow.y}px` : ''
+    top: arrow.y != null ? `${arrow.y}px` : '',
+    right: '',
+    bottom: '',
+    [staticSide.value]: '-4px',
   }
 })
 
 const contentClass = computed(() => [
   ns.e('content'),
-  ns.is('dark', props.effect === 'dark'),
+  // ns.is('dark', props.effect === 'dark'),
   ns.is(unref(strategy)),
   props.contentClass,
 ])
 
-watch(arrowRef, () => update())
+watch(triggerRef, () => update())
 
 watch(
   () => props.placement,

@@ -64,7 +64,6 @@ export const useFloating = ({
 
   const update = async () => {
     if (!isClient) return
-
     const referenceEl = unrefReference(referenceRef)
     const contentEl = unrefReference(contentRef)
     if (!referenceEl || !contentEl) return
