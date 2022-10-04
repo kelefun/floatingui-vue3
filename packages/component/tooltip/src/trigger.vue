@@ -10,7 +10,7 @@
 <script setup lang="ts">
 import { inject, onBeforeUnmount, watch } from 'vue'
 import { composeEventHandlers ,tooltipRootKey} from '@fv/utils'
-import ForwardRef from './forward-ref'
+import ForwardRef from '../../fragment'
 import { tooltipTriggerProps } from './trigger'
 import { tooltipCommonProps } from './common'
 
