@@ -108,7 +108,7 @@ const contentClass = computed(() => [
   props.contentClass,
 ])
 
-watch(triggerRef, () => update())
+watch(contentRef, () => update())
 
 watch(
   () => props.placement,
